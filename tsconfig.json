@@ -12,7 +12,8 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
-    "removeComments": false
+    "removeComments": false,
+    "skipLibCheck": true
   },
   "include": [
     "src/**/*"
