@@ -285,7 +285,7 @@ class Cluster {
           message: `Connect IPC Firing`,
         },
       })
-      this.connect(msg.firstShardID, msg.lastShardID, this.totalClusters, msg.token, msg.clientOptions)
+      this.connect(msg.firstShardID, msg.lastShardID, this.totalShards, msg.token, msg.clientOptions)
     },
     /**
      * Stats Payload Handle
