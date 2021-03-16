@@ -294,6 +294,7 @@ class Cluster {
       process.send({
         payload: "stats",
         msg: {
+          clusterID: this.clusterID,
           guilds: this.clusterGuilds,
           users: this.clusterUsers,
           uptime: this.clusterUptime,
