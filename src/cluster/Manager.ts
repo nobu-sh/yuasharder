@@ -175,7 +175,7 @@ class ClusterManager extends EventEmitter {
       this.clusters.set(clusterID, { workerID: worker.id })
       this.workers.set(worker.id, clusterID)
 
-      this.emit("info", {
+      this.emit("clusterInfo", {
         shards: [null, null],
         clusterID: clusterID,
         message: "Launching Cluster",
