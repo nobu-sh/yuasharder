@@ -40,19 +40,17 @@ class Cluster {
         msg: {
           shards: [this.firstShardID, this.lastShardID],
           clusterID: this.clusterID,
-          message: err.stack,
+          message: err,
         }, 
       })
     })
-    process.on('unhandledRejection', (reason, p) => {
+    process.on('unhandledRejection', (reason: Error, p) => {
       process.send({
         payload: 'clusterError',
         msg: {
           shards: [this.firstShardID, this.lastShardID],
           clusterID: this.clusterID,
-          message: `Unhandled rejection`,
-          promise: p,
-          reason: reason,
+          message: `Unhandled rejection at ${p} >> ${JSON.parse(JSON.stringify(reason))}`,
         }, 
       })
     })

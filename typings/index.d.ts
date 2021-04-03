@@ -119,7 +119,7 @@ export interface ManagerEvents {
   stats: [MasterStats]
   clusterInfo: [ClusterMessages]
   clusterWarn: [ClusterMessages]
-  clusterError: [ClusterError]
+  clusterError: [ClusterMessages]
   shardConnect: [ShardMessages]
   shardDisconnect: [ShardMessages]
   shardReady: [ShardMessages]
