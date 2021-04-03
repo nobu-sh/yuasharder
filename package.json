@@ -1,6 +1,6 @@
 {
   "name": "yuasharder",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "Sharder and Clusterer for Yua utilizing Discord Eris Library",
   "main": "lib/index.js",
   "types": "typings/index.d.ts",
