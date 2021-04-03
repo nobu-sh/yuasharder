@@ -102,6 +102,11 @@ export interface ClusterMessages {
   [key: string]: any
 }
 
+export interface ClusterError extends ClusterMessages {
+  promise: Promise<any>
+  reason: unknown
+}
+
 export interface ShardMessages {
   clusterID: number
   message: string
@@ -114,7 +119,7 @@ export interface ManagerEvents {
   stats: [MasterStats]
   clusterInfo: [ClusterMessages]
   clusterWarn: [ClusterMessages]
-  clusterError: [ClusterMessages]
+  clusterError: [ClusterError]
   shardConnect: [ShardMessages]
   shardDisconnect: [ShardMessages]
   shardReady: [ShardMessages]

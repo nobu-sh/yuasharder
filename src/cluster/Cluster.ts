@@ -50,7 +50,9 @@ class Cluster {
         msg: {
           shards: [this.firstShardID, this.lastShardID],
           clusterID: this.clusterID,
-          message: `Unhandled rejection at: Promise ${p} reason: ${reason}`,
+          message: `Unhandled rejection`,
+          promise: p,
+          reason: reason,
         }, 
       })
     })
