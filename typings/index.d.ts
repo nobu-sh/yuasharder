@@ -103,7 +103,7 @@ export interface ClusterMessages {
 }
 
 export interface ClusterError extends ClusterMessages {
-  reason: {
+  error: {
     name: string
     message: string
     stack: string
