@@ -70,6 +70,17 @@ export interface ClusterStats {
   shardsStats: ShardStats[]
 }
 
+export interface IPCEvent {
+  isSingleUse?: boolean
+  cb: ((msg: IPCEvents) => void)
+}
+
+export interface IPCEventListener {
+  removeListener: (() => void)
+  index: number
+  eventName: string
+}
+
 export interface ShardStats {
   shardId: number
   ready: boolean
@@ -78,7 +89,7 @@ export interface ShardStats {
 }
 
 export interface IPCInterface {
-  register(event: string, callback: (msg: IPCEvents) => void): void
+  register(event: string, callback: (msg: IPCEvents) => void): IPCEventListener
   unregister(event: string): void
   broadcast(event: string, message: { [key: string]: any }): void
   sendTo(clusterID: number, event: string, message: { [key: string]: any }): void

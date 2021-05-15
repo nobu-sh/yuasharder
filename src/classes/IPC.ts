@@ -1,17 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { EventEmitter } from 'events'
-import { IPCEvents } from 'typings/index'
-
-export interface IPCEvent {
-  isSingleUse?: boolean
-  cb: ((msg: IPCEvents) => void)
-}
-
-export interface IPCEventListener {
-  removeListener: (() => void)
-  index: number
-  eventName: string
-}
+import {
+  IPCEvents,
+  IPCEvent,
+  IPCEventListener,
+} from 'typings/index'
 
 class IPC extends EventEmitter {
   //private events: Map<string, { callback: (msg: IPCEvents) => void }> = new Map()
