@@ -50,6 +50,6 @@
     "typescript": "^3.9.2"
   },
   "dependencies": {
-    "eris": "^0.15.1"
+    "eris": ">=0.15.1"
   }
 }
